@@ -29,6 +29,26 @@
     />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+      function makeMail(){
+        let arr = [fullname,company,occupation,phone,material,pieces,comments]
+        let subject = "subject=网页询价"
+        if(company.value){
+          subject += " | "+company.value
+        }else{
+          subject += " | "+fullname.value
+        }
+        let body = ""
+        for (let element of arr) {
+          body+=element.attributes['id'].nodeValue+": "+element.value+"\n"
+        }
+        subject=encodeURIComponent(subject)
+        body=encodeURIComponent(body)
+        let link = 'mailto:info@aixway3d.cn?subject='+subject+'&body='+body
+        window.location.replace(link)
+      }
+    </script>
   </head>
   <body id="page-top">
     <!-- Navigation-->
@@ -128,8 +148,7 @@
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">应用领域</h2>
-          <h3 class="section-subheading text-muted">
-          </h3>
+          <h3 class="section-subheading text-muted"></h3>
         </div>
         <div class="row">
           <div class="col-lg-4 col-sm-6 mb-4">
@@ -391,7 +410,7 @@
           </li>
           <li class="timeline-inverted">
             <a href="#contact">
-              <div class="timeline-image">
+              <div class="timeline-image" id="contactNow">
                 <h1 class="mt-4 pt-1">
                   立即
                   <br />
@@ -492,9 +511,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">
-              
-            </p>
+            <p class="large text-muted"></p>
           </div>
         </div>
       </div>
@@ -542,58 +559,124 @@
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">立即询价</h2>
-          <h3 class="section-subheading text-muted">快速询价功能即将上线</h3>
+          <h3 class="section-subheading text-white">使用快速询价功能生成询价邮件</h3>
+          <!--
+  姓名
+  公司
+  职务
+  联系方式
+  模型
+  材料
+  备注描述
+  数量
+-->
         </div>
-        <!-- * * * * * * * * * * * * * * *-->
-        <!-- * * SB Forms Contact Form * *-->
-        <!-- * * * * * * * * * * * * * * *-->
-        <!-- This form is pre-integrated with SB Forms.-->
-        <!-- To make this form functional, sign up at-->
-        <!-- https://startbootstrap.com/solution/contact-forms-->
-        <!-- to get an API token!-->
+
         <form id="contactForm">
-          <div class="row align-items-stretch mb-5">
-            <div class="col-md-6">
-              <div class="form-group">
-                <!-- Name input-->
-                <input
-                  class="form-control"
-                  id="name"
-                  type="text"
-                  placeholder="姓名"
-                  disabled
-                />
+          <div class="row align-items-stretch">
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      id="fullname"
+                      type="text"
+                      placeholder="姓名"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      id="company"
+                      type="text"
+                      placeholder="公司"
+                    />
+                  </div>
+                </div>
+                
               </div>
-              <div class="form-group">
-                <!-- Email address input-->
-                <input
-                  class="form-control"
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                  disabled
-                />
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      id="occupation"
+                      type="text"
+                      placeholder="职务"
+                      
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      id="phone"
+                      type="number"
+                      placeholder="电话号码"
+                    />
+                  </div>
+                </div>
+                
               </div>
-              <div class="form-group mb-md-0">
-                <!-- Phone number input-->
-                <input
-                  class="form-control"
-                  id="phone"
-                  type="number"
-                  placeholder="工件数量"
-                  disabled
-                />
+              
+              <div class="row">
+                <div class="col-md-6 mb-md-0">
+                  <div class="form-group">
+                    <select
+                      class="form-select"
+                      id="material"
+                      style="padding:1.25rem;"
+                      required
+                    >
+                    <option value="" disabled selected>选择材料</option>
+                    <option value="volvo">不锈钢</option>
+                    <option value="saab">钛基合金</option>
+                    <option value="mercedes">镍基合金</option>
+                    <option value="audi">其他（备注）</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-md-0">
+                    <input
+                      class="form-control"
+                      id="pieces"
+                      type="number"
+                      placeholder="工件数量"
+                      min=1
+                    />
+                  </div>
+                </div>
+                
               </div>
+              
             </div>
-            <div class="col-md-6">
-              <div class="form-group form-group-textarea mb-md-0">
-                <!-- Message input-->
-                <textarea
-                  class="form-control"
-                  id="message"
-                  placeholder="消息"
-                  disabled
-                ></textarea>
+            
+            
+            <div class="col-md-5">
+              <div class='row'>
+                <div class="form-group ">
+                  <input
+                      class="form-control"
+                      type="text"
+                      value="请将模型文件（stl/step）作为附件发送"
+                      disabled
+                    />
+                </div>
+              </div>
+              <div class='row'>
+                <div class="form-group form-group-textarea pb-4">
+                  <textarea
+                    class="form-control"
+                    id="comments"
+                    placeholder="备注"
+                  ></textarea>
+                </div>
               </div>
             </div>
           </div>
@@ -601,9 +684,9 @@
           <!-- Submit Button-->
           <div class="text-center">
             <button
-              class="btn btn-primary btn-xl text-uppercase disabled"
-              id="submitButton"
-              type="submit"
+              type=submit
+              class="btn btn-primary btn-xl text-uppercase"
+              onclick=makeMail()
             >
               发送
             </button>
@@ -619,6 +702,24 @@
             &copy; 云耀深维（江苏）科技有限公司 2021
           </div>
           <div class="col-lg-4 my-3 my-lg-0">
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="mailto:info@aixway3d.cn"
+              target="_blank"
+              ><i class="far fa-envelope fa-2x"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="tel:+86051253668959"
+              target="_blank"
+              ><i class="fas fa-phone-square-alt fa-2x"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="tel:+8618913638959"
+              target="_blank"
+              ><i class="fas fa-mobile-alt fa-2x"></i
+            ></a>
             <a
               class="btn btn-dark btn-social mx-2"
               href="https://www.linkedin.com/in/%E4%BA%91%E8%80%80%E6%B7%B1%E7%BB%B4-aixway-4354a8210/"
