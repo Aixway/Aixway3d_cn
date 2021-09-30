@@ -46,6 +46,7 @@
         subject=encodeURIComponent(subject)
         body=encodeURIComponent(body)
         let link = 'mailto:info@aixway3d.cn?subject='+subject+'&body='+body
+        alert("如有模型文件（stl/step）请作为附件发送")
         window.location.replace(link)
       }
     </script>
@@ -559,7 +560,7 @@
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">立即询价</h2>
-          <h3 class="section-subheading text-white">使用快速询价功能生成询价邮件</h3>
+          <h3 class="section-subheading text-white">使用快速询价功能生成询价邮件/或点击页面底部电话图标直接呼叫</h3>
           <!--
   姓名
   公司
@@ -573,7 +574,7 @@
         </div>
 
         <form id="contactForm">
-          <div class="row align-items-stretch">
+          <div class="row align-items-stretch mb-5">
             <div class="col-md-7">
               <div class="row">
                 <div class="col-md-6">
@@ -659,17 +660,7 @@
             
             
             <div class="col-md-5">
-              <div class='row'>
-                <div class="form-group ">
-                  <input
-                      class="form-control"
-                      type="text"
-                      value="请将模型文件（stl/step）作为附件发送"
-                      disabled
-                    />
-                </div>
-              </div>
-              <div class='row'>
+              
                 <div class="form-group form-group-textarea pb-4">
                   <textarea
                     class="form-control"
@@ -677,7 +668,6 @@
                     placeholder="备注"
                   ></textarea>
                 </div>
-              </div>
             </div>
           </div>
 
