@@ -11710,13 +11710,13 @@ header.masthead .masthead-heading {
 
 .partner-logo{
   filter: grayscale(100%);
-  scale:1.4
+  transform:scale(1.4)
 
 }
 
 .partner-logo:hover{
   filter: grayscale(0%);
-  scale:1.8
+  transform:scale(1.8)
 }
 
 section#contact {
