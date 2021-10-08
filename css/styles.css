@@ -11781,3 +11781,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 #contactNow:hover{
   background-color: red
 }
+#contactNow{
+  display:flex;
+  font-weight:bold;
+}

@@ -52,3 +52,5 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+var contactTextSize = contactNow.clientWidth*0.3;
+contactText.style.fontSize=contactTextSize+"px"
