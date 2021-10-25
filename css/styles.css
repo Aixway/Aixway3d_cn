@@ -11798,5 +11798,20 @@ section#contact form#contactForm :-ms-input-placeholder {
   height:75px;
   margin-left: 0;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+#contactDisplay{
+  position:fixed;
+  right: 10px;
+  top: 40%;
+  z-index: -10;
+  width: 150px;
+  height: 180px;
+}
+#contactDisplay>.btn{
+  width:150px;
+  height:75px;
+  margin-left: 0;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }

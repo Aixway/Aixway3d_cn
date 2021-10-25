@@ -18,6 +18,7 @@
   <link href="css/styles.css" rel="stylesheet" />
 
   <script type="text/javascript">
+
     function makeMail() {
       let arr = [
         fullname,
@@ -474,6 +475,7 @@
       <div class="text-center">
         <h2 class="section-heading text-uppercase">立即询价</h2>
         <h3 class="section-subheading text-white">
+          Email:info@aixway3d.cn<br>电话:0512-53668959<br>手机:18913638959<br>
           使用快速询价功能生成询价邮件/或点击页面底部电话图标直接呼叫
         </h3>
 
@@ -551,11 +553,12 @@
           &copy; 云耀深维（江苏）科技有限公司 2021
         </div>
         <div class="col-lg-4 my-3 my-lg-0">
-          <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn" target="_blank"><i
-              class="far fa-envelope fa-2x"></i></a>
+          <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn"
+            target="_blank"><i class="far fa-envelope fa-2x"></i></a>
           <a class="btn btn-dark btn-social mx-2" href="tel:+8651253668959" title="+8651253668959" target="_blank"><i
               class="fas fa-phone-square-alt fa-2x"></i></a>
-          
+          <a class="btn btn-dark btn-social mx-2" href="tel:+8618913638959" target="_blank"><i
+              class="fas fa-mobile-alt fa-2x"></i></a>
           <a class="btn btn-dark btn-social mx-2"
             href="https://www.linkedin.com/in/%E4%BA%91%E8%80%80%E6%B7%B1%E7%BB%B4-aixway-4354a8210/" target="_blank"><i
               class="fab fa-linkedin-in fa-2x"></i></a>
@@ -775,11 +778,22 @@
   <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>-->
-  <div id="floatContacts">
-    <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn" target="_blank"><i
-        class="far fa-envelope fa-4x"></i></a>
-    <a class="btn btn-dark btn-social mx-2" href="tel:+8651253668959" title="+8651253668959" target="_blank"><i
-        class="fas fa-phone-square-alt fa-4x"></i></a>
+  <div id="floatContacts" onmouseout="moveNormal()" onmouseover="moveLeft()">
+    <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn" target="_blank">
+      <i class="far fa-envelope fa-4x"></i>
+    </a><br>
+    <a class="btn btn-dark btn-social mx-2" href="tel:+8651253668959" title="+8651253668959" target="_blank">
+      <i class="fas fa-phone-square-alt fa-4x"></i>
+    </a>
+  </div>
+  <div id="contactDisplay">
+    <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn" target="_blank">
+      <strong>Email:<br>info@aixway3d.cn</strong>
+    </a><br>
+    <a class="btn btn-dark btn-social mx-2" href="tel:+8651253668959" title="+8651253668959" target="_blank">
+      <strong>Tel:<br>0512-53668959</strong>
+  
+    </a>
   </div>
 </body>
 

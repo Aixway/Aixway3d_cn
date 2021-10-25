@@ -54,3 +54,17 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 var contactTextSize = contactNow.clientWidth*0.3;
 contactText.style.fontSize=contactTextSize+"px"
+
+function moveLeft(){
+    floatContacts = document.getElementById("floatContacts")
+    floatContacts.style.width = '235px'
+    contactDisplay = document.getElementById('contactDisplay')
+    contactDisplay.style.zIndex = '10'
+  
+}
+  function moveNormal(){
+    floatContacts = document.getElementById("floatContacts")
+    floatContacts.style.width = '75px'
+    contactDisplay = document.getElementById('contactDisplay')
+    contactDisplay.style.zIndex = '-10'
+  }
