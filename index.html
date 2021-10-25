@@ -1,1076 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>云耀深维（江苏）科技有限公司</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
 
-    <script type="text/javascript">
-      function makeMail () {
-        let arr = [
-          fullname,
-          company,
-          occupation,
-          phone,
-          material,
-          pieces,
-          comments
-        ]
-        let subject = '网页询价'
-        if (company.value) {
-          subject += ' | ' + company.value
-        } else {
-          subject += ' | ' + fullname.value
-        }
-        let body = ''
-        for (let element of arr) {
-          body +=
-            element.attributes['id'].nodeValue + ': ' + element.value + '\n'
-        }
-        subject = encodeURIComponent(subject)
-        body = encodeURIComponent(body)
-        let link =
-          'mailto:info@aixway3d.cn?subject=' + subject + '&body=' + body
-        alert('如有模型文件（stl/step）请作为附件发送')
-        window.location.replace(link)
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>云耀深维（江苏）科技有限公司</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <script type="text/javascript">
+    function makeMail() {
+      let arr = [
+        fullname,
+        company,
+        occupation,
+        phone,
+        material,
+        pieces,
+        comments
+      ]
+      let subject = '网页询价'
+      if (company.value) {
+        subject += ' | ' + company.value
+      } else {
+        subject += ' | ' + fullname.value
       }
-    </script>
-    <!-- Clarity tracking code for https://www.aixway3d.cn -->
-    <script>
-      ;(function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            ;(c[a].q = c[a].q || []).push(arguments)
-          }
-        t = l.createElement(r)
-        t.async = 1
-        t.src = 'https://www.clarity.ms/tag/' + i + '?ref=bwt'
-        y = l.getElementsByTagName(r)[0]
-        y.parentNode.insertBefore(t, y)
-      })(window, document, 'clarity', 'script', '8s4ileagiu')
-    </script>
-  </head>
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#page-top"
-          ><img src="assets/favicon.ico" alt="..." /><span id="navBrandText"
-            >云耀深维</span
-          ></a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#services">服务</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">应用场景</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">核心技术</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#team">团队</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">联系我们</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-      <div class="container">
-        <div class="masthead-heading text-uppercase">云耀深维</div>
-        <div class="masthead-subheading">金属增材制造专家</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services"
-          >了解更多</a
-        >
-      </div>
-    </header>
-    <!-- Services-->
-    <section class="page-section" id="services">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">全尺寸、全工艺链服务</h2>
-          <h3 class="section-subheading text-muted">
-            我们为客户提供LPBF/SLM技术全工艺链解决方案，全方位满足行业要求
-          </h3>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-info"></i>
-              <i class="fas fa-layer-group fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">打印服务</h4>
-            <p class="text-muted">
-              为客户提供各类金属粉末材料小批量至大批量打印服务，可打印材料包括镍基（如镍718、镍625）、钛基（如钛六铝四钒）、铁基（如316L）、铜基、钴基（如钴铬钼合金）、重金属（如钨）、贵金属（如14K、18K黄金）等
-            </p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-info"></i>
-              <i class="fas fa-tools fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">设备开发</h4>
-            <p class="text-muted">
-              针对行业情况，开发定制化满足行业特殊要求的3D打印设备及配套设备，如为高校、研究机构提供科研用定制化机型、针对行业需求为客户开发超大尺寸打印设备、定制化筛粉设备等
-            </p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-info"></i>
-              <i class="fas fa-users-cog fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">研发服务</h4>
-            <p class="text-muted">
-              多年金属3D打印技术开发、设备及材料研发经验，为科研院所与企业提供技术研发服务如为客户开发高性能的新型金属粉末材料打印工艺（如高强度合金、航空航天用高温合金、高熵合金、超高强度复合材料等）
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Portfolio Grid-->
-    <section class="page-section bg-light" id="portfolio">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">应用领域</h2>
-          <h3 class="section-subheading text-muted"></h3>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <!-- Portfolio item 1-->
-            <div class="portfolio-item">
-              <a
-                class="portfolio-link"
-                data-bs-toggle="modal"
-                href="#portfolioModal1"
-              >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fas fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/1.jpg"
-                  alt="..."
-                />
-                <!--p style="font-size: 0.9rem;font-style: italic;"><img class="img-fluid" style="display: block;" src="https://live.staticflickr.com/328/19809854481_9144176338_b.jpg" alt="jet engine sketch 2"><a href="https://www.flickr.com/photos/34547181@N00/19809854481">"jet engine sketch 2"</a><span> by <a href="https://www.flickr.com/photos/34547181@N00">Philippe Put</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=0777b9e1-7816-4620-b5ea-8d3f47a394a5" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a></p-->
-              </a>
-              <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">航空航天</div>
-                <div class="portfolio-caption-subheading text-muted">
-                  镍基高温合金 航空发动机一体成型
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <!-- Portfolio item 2-->
-            <div class="portfolio-item">
-              <a
-                class="portfolio-link"
-                data-bs-toggle="modal"
-                href="#portfolioModal2"
-              >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fas fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/2.jpg"
-                  alt="..."
-                />
-              </a>
-              <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">医疗植入体</div>
-                <div class="portfolio-caption-subheading text-muted">
-                  心脏支架 骨科钢板
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <!-- Portfolio item 3-->
-            <div class="portfolio-item">
-              <a
-                class="portfolio-link"
-                data-bs-toggle="modal"
-                href="#portfolioModal3"
-              >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fas fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/3.jpg"
-                  alt="..."
-                />
-              </a>
-              <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">精密模具</div>
-                <div class="portfolio-caption-subheading text-muted">
-                  复杂内流道散热 高速冷却
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-            <!-- Portfolio item 4-->
-            <div class="portfolio-item">
-              <a
-                class="portfolio-link"
-                data-bs-toggle="modal"
-                href="#portfolioModal4"
-              >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fas fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/4.jpg"
-                  alt="..."
-                />
-              </a>
-              <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">精密探测</div>
-                <div class="portfolio-caption-subheading text-muted">
-                  多孔多流道一体成型 微型高精度探测
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-            <!-- Portfolio item 5-->
-            <div class="portfolio-item">
-              <a
-                class="portfolio-link"
-                data-bs-toggle="modal"
-                href="#portfolioModal5"
-              >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fas fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/5.jpg"
-                  alt="..."
-                />
-              </a>
-              <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">消费电子</div>
-                <div class="portfolio-caption-subheading text-muted">
-                  复杂内流道 高性能水冷散热
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <!-- Portfolio item 6-->
-            <div class="portfolio-item">
-              <a
-                class="portfolio-link"
-                data-bs-toggle="modal"
-                href="#portfolioModal6"
-              >
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fas fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/6.jpg"
-                  alt="..."
-                />
-              </a>
-              <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">贵金属</div>
-                <div class="portfolio-caption-subheading text-muted">
-                  金银饰品个性化定制
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- About-->
-    <section class="page-section" id="about">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">核心技术</h2>
-          <h3 class="section-subheading text-muted">
-            云耀深维专家团队自主研发的微米级金属增材制造技术实现了复杂精密结构金属材料的3D一次打印成型，<br />
-            达到打印精度2-5微米，打印部件表面粗糙度Ra值0.8-1微米，致力于填补小型、高精度增材制造部件的市场空白
-          </h3>
-        </div>
-        <ul class="timeline">
-          <li>
-            <div class="timeline-image">
-              <img
-                class="rounded-circle img-fluid"
-                src="assets/img/about/1.jpg"
-                alt="..."
-              />
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>超高精度</h4>
-                <h5 class="subheading text-muted">2-5微米</h5>
-              </div>
-              <div class="timeline-body">
-                <p class="text-muted">
-                  微米级打印技术控制激光光斑至20微米，平整铺粉层厚至5微米，实现了金属打印精度至2-5微米，使产品的设计更加自由，突破设计局限，实现微米级多孔、栅格、中空、铰链、多维复杂流道等精密结构
-                </p>
-              </div>
-            </div>
+      let body = ''
+      for (let element of arr) {
+        body +=
+          element.attributes['id'].nodeValue + ': ' + element.value + '\n'
+      }
+      subject = encodeURIComponent(subject)
+      body = encodeURIComponent(body)
+      let link =
+        'mailto:info@aixway3d.cn?subject=' + subject + '&body=' + body
+      alert('如有模型文件（stl/step）请作为附件发送')
+      window.location.replace(link)
+    }
+  </script>
+  <!-- Clarity tracking code for https://www.aixway3d.cn -->
+  <script>
+    ; (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          ; (c[a].q = c[a].q || []).push(arguments)
+        }
+      t = l.createElement(r)
+      t.async = 1
+      t.src = 'https://www.clarity.ms/tag/' + i + '?ref=bwt'
+      y = l.getElementsByTagName(r)[0]
+      y.parentNode.insertBefore(t, y)
+    })(window, document, 'clarity', 'script', '8s4ileagiu')
+  </script>
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top"><img src="assets/favicon.ico" alt="..." /><span
+          id="navBrandText">云耀深维</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#services">服务</a>
           </li>
-          <li class="timeline-inverted">
-            <div class="timeline-image">
-              <img
-                class="rounded-circle img-fluid"
-                src="assets/img/about/2.jpg"
-                alt="..."
-              />
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>超光洁表面</h4>
-                <h5 class="subheading text-muted">Ra:0.8-1微米</h5>
-              </div>
-              <div class="timeline-body">
-                <p class="text-muted">
-                  微米级打印将轮廓最大高度Rz降低至5到10微米之间，Ra值0.8-1微米，可减少大量后期加工环节
-                </p>
-              </div>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">应用场景</a>
           </li>
-          <li>
-            <div class="timeline-image">
-              <img
-                class="rounded-circle img-fluid"
-                src="assets/img/about/3.jpg"
-                alt="..."
-              />
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>免支撑打印</h4>
-                <h5 class="subheading text-muted">>10度</h5>
-              </div>
-              <div class="timeline-body">
-                <p class="text-muted">
-                  微米级3D打印实现无支撑的一步成型，并且实现了大部分结构10度角度以上无需支撑、自由打印
-                </p>
-              </div>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">核心技术</a>
           </li>
-          <li class="timeline-inverted">
-            <div class="timeline-image">
-              <img
-                class="rounded-circle img-fluid"
-                src="assets/img/about/4.jpg"
-                alt="..."
-              />
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>平整保护气流</h4>
-                <h5 class="subheading text-muted">均匀流速</h5>
-              </div>
-              <div class="timeline-body">
-                <p class="text-muted">
-                  微米级打印采用云耀深维自主研发的新型气体输送装置，实现成型腔体平整、均匀的气体流速，保障打印过程的稳定性和打印产品的可靠性
-                </p>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-inverted">
-            <a href="#contact">
-              <div
-                class="timeline-image"
-                id="contactNow"
-                style="font-size:100%"
-              >
-                <div id="contactText" class="m-auto" style="line-height:1">
-                  立即
-                  <br />
-                  咨询
-                </div>
-              </div>
-            </a>
+          <li class="nav-item"><a class="nav-link" href="#team">团队</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">联系我们</a>
           </li>
         </ul>
       </div>
-    </section>
-    <!-- Team-->
-    <section class="page-section bg-light" id="team">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">团队</h2>
-          <h3 class="section-subheading text-muted" style="font-size: 1rem;">
-            由来自激光金属粉床增材制造技术LPBF/SLM的发明机构-德国弗朗霍夫激光研究所FraunhoferILT的专家团队创立。
-            致力于全球领先的激光增材制造全尺寸、全产业链的部件打印、技术开发、设备研发等服务，为前沿技术工业化提供专业的技术支持和设备保障。
-            依托强大的专家团队，云耀深维与全球先进制造领域的各大研究所、高校和企业建立了紧密的合作关系。
-          </h3>
+    </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead-heading text-uppercase">云耀深维</div>
+      <div class="masthead-subheading">金属增材制造专家</div>
+      <a class="btn btn-primary btn-xl text-uppercase" href="#services">了解更多</a>
+    </div>
+  </header>
+  <!-- Services-->
+  <section class="page-section" id="services">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">全尺寸、全工艺链服务</h2>
+        <h3 class="section-subheading text-muted">
+          我们为客户提供LPBF/SLM技术全工艺链解决方案，全方位满足行业要求
+        </h3>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-info"></i>
+            <i class="fas fa-layer-group fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3">打印服务</h4>
+          <p class="text-muted">
+            为客户提供各类金属粉末材料小批量至大批量打印服务，可打印材料包括镍基（如镍718、镍625）、钛基（如钛六铝四钒）、铁基（如316L）、铜基、钴基（如钴铬钼合金）、重金属（如钨）、贵金属（如14K、18K黄金）等
+          </p>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/1.jpg"
-                alt="..."
-              />
-              <h4>尹伊君</h4>
-              <p class="text-muted">市场总监</p>
-              <p class="text-muted">
-                德国图宾根大学媒体硕士，中国北京外国语大学学士。世界第一大传媒集团WPP与世界第三大传媒集团Publicis
-                Media阳狮集团多年工作经验，在企业营销咨询及策划领域拥有丰富经验。
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/2.jpg"
-                alt="..."
-              />
-              <h4>沈李耀威</h4>
-              <p class="text-muted">总经理</p>
-              <p class="text-muted">
-                弗朗霍夫激光技术研究所增材制造资深科研工程师，德国亚琛工业大学机械工程硕士、经济学硕士、清华大学汽车工程硕士、德国亚琛工业大学学士。师从LPBF/SLM技术发明者，在金属增材制造技术、设备、工艺及全产业链研发领域拥有多年经验。
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/3.jpg"
-                alt="..."
-              />
-              <h4>李潇骁</h4>
-              <p class="text-muted">项目总监</p>
-              <p class="text-muted">
-                亚琛工大金属材料研究所资深科研工程师、博士，亚琛工大材料物理系硕士。多年金属材料微观显微组织和力学性能表征，有限元数值模拟，材料失效分析以及材料优化设计等材料科学科研经验。
-              </p>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-info"></i>
+            <i class="fas fa-tools fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3">设备开发</h4>
+          <p class="text-muted">
+            针对行业情况，开发定制化满足行业特殊要求的3D打印设备及配套设备，如为高校、研究机构提供科研用定制化机型、针对行业需求为客户开发超大尺寸打印设备、定制化筛粉设备等
+          </p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-info"></i>
+            <i class="fas fa-users-cog fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3">研发服务</h4>
+          <p class="text-muted">
+            多年金属3D打印技术开发、设备及材料研发经验，为科研院所与企业提供技术研发服务如为客户开发高性能的新型金属粉末材料打印工艺（如高强度合金、航空航天用高温合金、高熵合金、超高强度复合材料等）
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Portfolio Grid-->
+  <section class="page-section bg-light" id="portfolio">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">应用领域</h2>
+        <h3 class="section-subheading text-muted"></h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Portfolio item 1-->
+          <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+              <!--p style="font-size: 0.9rem;font-style: italic;"><img class="img-fluid" style="display: block;" src="https://live.staticflickr.com/328/19809854481_9144176338_b.jpg" alt="jet engine sketch 2"><a href="https://www.flickr.com/photos/34547181@N00/19809854481">"jet engine sketch 2"</a><span> by <a href="https://www.flickr.com/photos/34547181@N00">Philippe Put</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=0777b9e1-7816-4620-b5ea-8d3f47a394a5" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a></p-->
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">航空航天</div>
+              <div class="portfolio-caption-subheading text-muted">
+                镍基高温合金 航空发动机一体成型
+              </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/4.jpg"
-                alt="..."
-              />
-              <h4>Lukas Masseling</h4>
-              <p class="text-muted">工艺工程师</p>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Portfolio item 2-->
+          <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">医疗植入体</div>
+              <div class="portfolio-caption-subheading text-muted">
+                心脏支架 骨科钢板
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <!-- Portfolio item 3-->
+          <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">精密模具</div>
+              <div class="portfolio-caption-subheading text-muted">
+                复杂内流道散热 高速冷却
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <!-- Portfolio item 4-->
+          <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">精密探测</div>
+              <div class="portfolio-caption-subheading text-muted">
+                多孔多流道一体成型 微型高精度探测
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+          <!-- Portfolio item 5-->
+          <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">消费电子</div>
+              <div class="portfolio-caption-subheading text-muted">
+                复杂内流道 高性能水冷散热
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <!-- Portfolio item 6-->
+          <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+              <div class="portfolio-caption-heading">贵金属</div>
+              <div class="portfolio-caption-subheading text-muted">
+                金银饰品个性化定制
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About-->
+  <section class="page-section" id="about">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">核心技术</h2>
+        <h3 class="section-subheading text-muted">
+          云耀深维专家团队自主研发的微米级金属增材制造技术实现了复杂精密结构金属材料的3D一次打印成型，<br />
+          达到打印精度2-5微米，打印部件表面粗糙度Ra值0.8-1微米，致力于填补小型、高精度增材制造部件的市场空白
+        </h3>
+      </div>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-image">
+            <img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." />
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4>超高精度</h4>
+              <h5 class="subheading text-muted">2-5微米</h5>
+            </div>
+            <div class="timeline-body">
               <p class="text-muted">
-                德国弗朗霍夫激光技术研究所增材制造部科研工程师。致力于提升金属3D打印产品表面粗糙度、成型精度的相关研究，在微米级激光金属3D打印领域拥有多年开发经验。
+                微米级打印技术控制激光光斑至20微米，平整铺粉层厚至5微米，实现了金属打印精度至2-5微米，使产品的设计更加自由，突破设计局限，实现微米级多孔、栅格、中空、铰链、多维复杂流道等精密结构
               </p>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="team-member">
-              <a
-                style="color: black;"
-                href="https://ieeexplore.ieee.org/author/37270586800"
-                target="_blank"
-              >
-                <img
-                  class="mx-auto rounded-circle"
-                  src="assets/img/team/5.jpg"
-                  alt="..."
-                />
-                <h4 class="text-black">Prof. Reinhart Poprawe</h4>
-              </a>
-              <p class="text-muted">战略顾问</p>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-image">
+            <img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." />
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4>超光洁表面</h4>
+              <h5 class="subheading text-muted">Ra:0.8-1微米</h5>
+            </div>
+            <div class="timeline-body">
               <p class="text-muted">
-                世界著名激光物理学家，亚琛工业大学教授/前副校长，弗朗霍夫激光技术研究所前所长，亚琛工业大学激光技术研究院LLT院长，美国激光学会（LIA）董事会成员（2012年担任学会主席），美国机械工程师学会（SME）会士，亚琛工业大学国际理事会主席和中国事务校长代表，清华大学终身荣誉教授，中科院客座教授。
+                微米级打印将轮廓最大高度Rz降低至5到10微米之间，Ra值0.8-1微米，可减少大量后期加工环节
               </p>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/6.jpg"
-                alt="..."
-              />
-              <h4>Julian Schmitz</h4>
-              <p class="text-muted">机械设计工程师</p>
+        </li>
+        <li>
+          <div class="timeline-image">
+            <img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." />
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4>免支撑打印</h4>
+              <h5 class="subheading text-muted">>10度</h5>
+            </div>
+            <div class="timeline-body">
               <p class="text-muted">
-                亚琛工业大学机械制造硕士。在金属3D打印设备设计领域拥有丰富经验。
+                微米级3D打印实现无支撑的一步成型，并且实现了大部分结构10度角度以上无需支撑、自由打印
               </p>
             </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-image">
+            <img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." />
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4>平整保护气流</h4>
+              <h5 class="subheading text-muted">均匀流速</h5>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+                微米级打印采用云耀深维自主研发的新型气体输送装置，实现成型腔体平整、均匀的气体流速，保障打印过程的稳定性和打印产品的可靠性
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <a href="#contact">
+            <div class="timeline-image" id="contactNow" style="font-size:100%">
+              <div id="contactText" class="m-auto" style="line-height:1">
+                立即
+                <br />
+                咨询
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Team-->
+  <section class="page-section bg-light" id="team">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">团队</h2>
+        <h3 class="section-subheading text-muted" style="font-size: 1rem;">
+          由来自激光金属粉床增材制造技术LPBF/SLM的发明机构-德国弗朗霍夫激光研究所FraunhoferILT的专家团队创立。
+          致力于全球领先的激光增材制造全尺寸、全产业链的部件打印、技术开发、设备研发等服务，为前沿技术工业化提供专业的技术支持和设备保障。
+          依托强大的专家团队，云耀深维与全球先进制造领域的各大研究所、高校和企业建立了紧密的合作关系。
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
+            <h4>尹伊君</h4>
+            <p class="text-muted">市场总监</p>
+            <p class="text-muted">
+              德国图宾根大学媒体硕士，中国北京外国语大学学士。世界第一大传媒集团WPP与世界第三大传媒集团Publicis
+              Media阳狮集团多年工作经验，在企业营销咨询及策划领域拥有丰富经验。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
+            <h4>沈李耀威</h4>
+            <p class="text-muted">总经理</p>
+            <p class="text-muted">
+              弗朗霍夫激光技术研究所增材制造资深科研工程师，德国亚琛工业大学机械工程硕士、经济学硕士、清华大学汽车工程硕士、德国亚琛工业大学学士。师从LPBF/SLM技术发明者，在金属增材制造技术、设备、工艺及全产业链研发领域拥有多年经验。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
+            <h4>李潇骁</h4>
+            <p class="text-muted">项目总监</p>
+            <p class="text-muted">
+              亚琛工大金属材料研究所资深科研工程师、博士，亚琛工大材料物理系硕士。多年金属材料微观显微组织和力学性能表征，有限元数值模拟，材料失效分析以及材料优化设计等材料科学科研经验。
+            </p>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted"></p>
-        </div>
-      </div>
-    </section>
-    <!-- Partners-->
-    <div class="py-5 bg-white">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-3 col-sm-6 my-3">
-            <a href="https://www.fraunhofer.de/en.html" target="_blank"
-              ><img
-                class="img-fluid img-brand d-block mx-auto partner-logo"
-                src="assets/img/logos/fraunhofer.svg"
-                alt="..."
-            /></a>
-          </div>
-          <div class="col-md-3 col-sm-6 my-3">
-            <a href="https://www.rwth-aachen.de" target="_blank"
-              ><img
-                class="img-fluid img-brand d-block mx-auto partner-logo"
-                src="assets/img/logos/RWTH.svg"
-                alt="..."
-            /></a>
-          </div>
-          <div class="col-md-3 col-sm-6 my-3">
-            <a href="https://acam.rwth-campus.com/" target="_blank"
-              ><img
-                class="img-fluid img-brand d-block mx-auto partner-logo"
-                src="assets/img/logos/acam.svg"
-                alt="..."
-            /></a>
-          </div>
-          <div class="col-md-3 col-sm-6 my-3">
-            <a href="https://www.nwpu.edu.cn/" target="_blank"
-              ><img
-                class="img-fluid img-brand d-block mx-auto partner-logo"
-                src="assets/img/logos/npu.svg"
-                alt="..."
-            /></a>
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/team/4.jpg" alt="..." />
+            <h4>Lukas Masseling</h4>
+            <p class="text-muted">工艺工程师</p>
+            <p class="text-muted">
+              德国弗朗霍夫激光技术研究所增材制造部科研工程师。致力于提升金属3D打印产品表面粗糙度、成型精度的相关研究，在微米级激光金属3D打印领域拥有多年开发经验。
+            </p>
           </div>
         </div>
-      </div>
-    </div>
-    <section class="page-section" id="contact">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">立即询价</h2>
-          <h3 class="section-subheading text-white">
-            使用快速询价功能生成询价邮件/或点击页面底部电话图标直接呼叫
-          </h3>
-          <!--
-  姓名
-  公司
-  职务
-  联系方式
-  模型
-  材料
-  备注描述
-  数量
--->
-        </div>
-
-        <form id="contactForm">
-          <div class="row align-items-stretch mb-5">
-            <div class="col-md-7">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      class="form-control"
-                      id="fullname"
-                      type="text"
-                      placeholder="姓名"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      class="form-control"
-                      id="company"
-                      type="text"
-                      placeholder="公司"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      class="form-control"
-                      id="occupation"
-                      type="text"
-                      placeholder="职务"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      class="form-control"
-                      id="phone"
-                      type="number"
-                      placeholder="电话号码"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-md-0">
-                  <div class="form-group">
-                    <select
-                      class="form-select"
-                      id="material"
-                      style="padding:1.25rem;"
-                      required
-                    >
-                      <option value="" disabled selected>选择材料</option>
-                      <option value="不锈钢">不锈钢</option>
-                      <option value="钛基合金">钛基合金</option>
-                      <option value="镍基合金">镍基合金</option>
-                      <option value="其他（备注）">其他（备注）</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group mb-md-0">
-                    <input
-                      class="form-control"
-                      id="pieces"
-                      type="number"
-                      placeholder="工件数量"
-                      min="1"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-5">
-              <div class="form-group form-group-textarea pb-4">
-                <textarea
-                  class="form-control"
-                  id="comments"
-                  placeholder="备注"
-                ></textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- Submit Button-->
-          <div class="text-center">
-            <button
-              type="submit"
-              class="btn btn-primary btn-xl text-uppercase"
-              onclick="makeMail()"
-            >
-              发送
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-    <!-- Footer-->
-    <footer class="footer py-4">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 text-lg-start">
-            &copy; 云耀深维（江苏）科技有限公司 2021
-          </div>
-          <div class="col-lg-4 my-3 my-lg-0">
-            <a
-              class="btn btn-dark btn-social mx-2"
-              href="mailto:info@aixway3d.cn"
-              target="_blank"
-              ><i class="far fa-envelope fa-2x"></i
-            ></a>
-            <a
-              class="btn btn-dark btn-social mx-2"
-              href="tel:+8651253668959"
-              target="_blank"
-              ><i class="fas fa-phone-square-alt fa-2x"></i
-            ></a>
-            <a
-              class="btn btn-dark btn-social mx-2"
-              href="tel:+8618913638959"
-              target="_blank"
-              ><i class="fas fa-mobile-alt fa-2x"></i
-            ></a>
-            <a
-              class="btn btn-dark btn-social mx-2"
-              href="https://www.linkedin.com/in/%E4%BA%91%E8%80%80%E6%B7%B1%E7%BB%B4-aixway-4354a8210/"
-              target="_blank"
-              ><i class="fab fa-linkedin-in fa-2x"></i
-            ></a>
-            <a
-              class="btn btn-dark btn-social mx-2"
-              href="https://github.com/Aixway"
-              target="_blank"
-              ><i class="fab fa-github fa-2x"></i
-            ></a>
-            <a
-              class="btn btn-dark btn-social mx-2"
-              href="https://api.map.baidu.com/marker?location=31.423402,121.143285&title=云耀深维(江苏)科技有限公司&content=江苏省苏州市太仓市子冈路27号科技信息产业园一期6栋702室&output=html
-            "
-              target="_blank"
-              ><i class="fas fa-map-marked-alt fa-2x"></i
-            ></a>
-          </div>
-          <div class="col-lg-4 text-lg-end">
-            <a
-              class="col-lg-4 text-lg-start text-dark"
-              href="https://beian.miit.gov.cn"
-              target="_blank"
-            >
-              ICP备案号：苏ICP备2021042006号
+        <div class="col-lg-4">
+          <div class="team-member">
+            <a style="color: black;" href="https://ieeexplore.ieee.org/author/37270586800" target="_blank">
+              <img class="mx-auto rounded-circle" src="assets/img/team/5.jpg" alt="..." />
+              <h4 class="text-black">Prof. Reinhart Poprawe</h4>
             </a>
+            <p class="text-muted">战略顾问</p>
+            <p class="text-muted">
+              世界著名激光物理学家，亚琛工业大学教授/前副校长，弗朗霍夫激光技术研究所前所长，亚琛工业大学激光技术研究院LLT院长，美国激光学会（LIA）董事会成员（2012年担任学会主席），美国机械工程师学会（SME）会士，亚琛工业大学国际理事会主席和中国事务校长代表，清华大学终身荣誉教授，中科院客座教授。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="assets/img/team/6.jpg" alt="..." />
+            <h4>Julian Schmitz</h4>
+            <p class="text-muted">机械设计工程师</p>
+            <p class="text-muted">
+              亚琛工业大学机械制造硕士。在金属3D打印设备设计领域拥有丰富经验。
+            </p>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
-    <div
-      class="portfolio-modal modal fade"
-      id="portfolioModal1"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal">
-            <img src="assets/img/close-icon.svg" alt="Close modal" />
-          </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">航空航天</h2>
-                  <p class="item-intro text-muted">
-                    镍基高温合金 航发、火箭引擎部件一体成型
-                  </p>
-                  <img
-                    class="img-fluid d-block mx-auto"
-                    src="assets/img/portfolio/1.jpg"
-                    alt="..."
-                  />
-                  <!--p style="font-size: 0.9rem;font-style: italic;"><img class="img-fluid d-block mx-auto" style="display: block;" src="https://live.staticflickr.com/328/19809854481_9144176338_b.jpg" alt="jet engine sketch 2"><a href="https://www.flickr.com/photos/34547181@N00/19809854481">"jet engine sketch 2"</a><span> by <a href="https://www.flickr.com/photos/34547181@N00">Philippe Put</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=0777b9e1-7816-4620-b5ea-8d3f47a394a5" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a></p-->
-                  <p>
-                    我司专家团队运用微米级打印技术成功一次成型具有高表面光洁度和复杂内部结构的镍
-                    基高温合金航空发动机部件，大幅度提高其性能及效果;
-                  </p>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="large text-muted"></p>
+      </div>
+    </div>
+  </section>
+  <!-- Partners-->
+  <div class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-sm-6 my-3">
+          <a href="https://www.fraunhofer.de/en.html" target="_blank"><img
+              class="img-fluid img-brand d-block mx-auto partner-logo" src="assets/img/logos/fraunhofer.svg"
+              alt="..." /></a>
+        </div>
+        <div class="col-md-3 col-sm-6 my-3">
+          <a href="https://www.rwth-aachen.de" target="_blank"><img
+              class="img-fluid img-brand d-block mx-auto partner-logo" src="assets/img/logos/RWTH.svg" alt="..." /></a>
+        </div>
+        <div class="col-md-3 col-sm-6 my-3">
+          <a href="https://acam.rwth-campus.com/" target="_blank"><img
+              class="img-fluid img-brand d-block mx-auto partner-logo" src="assets/img/logos/acam.svg" alt="..." /></a>
+        </div>
+        <div class="col-md-3 col-sm-6 my-3">
+          <a href="https://www.nwpu.edu.cn/" target="_blank"><img
+              class="img-fluid img-brand d-block mx-auto partner-logo" src="assets/img/logos/npu.svg" alt="..." /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">立即询价</h2>
+        <h3 class="section-subheading text-white">
+          使用快速询价功能生成询价邮件/或点击页面底部电话图标直接呼叫
+        </h3>
 
-                  <button
-                    class="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i class="fas fa-times me-1"></i>
-                    关闭
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-    <!-- Portfolio item 2 modal popup-->
-    <div
-      class="portfolio-modal modal fade"
-      id="portfolioModal2"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal">
-            <img src="assets/img/close-icon.svg" alt="Close modal" />
-          </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">医疗植入体</h2>
-                  <p class="item-intro text-muted">
-                    心脏支架 骨科钢板 人工关节 定制化植入体 可溶解植入体
-                  </p>
-                  <img
-                    class="img-fluid d-block mx-auto"
-                    src="assets/img/portfolio/2.jpg"
-                    alt="..."
-                  />
-                  <p>
-                    微米级打印技术可直接成型微创手术器械/手术耗材/手术机器人关节及快速制造个性化植入体/介入体
-                  </p>
 
-                  <button
-                    class="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i class="fas fa-times me-1"></i>
-                    关闭
-                  </button>
+      <form id="contactForm">
+        <div class="row align-items-stretch mb-5">
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" id="fullname" type="text" placeholder="姓名" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" id="company" type="text" placeholder="公司" />
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 3 modal popup-->
-    <div
-      class="portfolio-modal modal fade"
-      id="portfolioModal3"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal">
-            <img src="assets/img/close-icon.svg" alt="Close modal" />
-          </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">精密模具</h2>
-                  <p class="item-intro text-muted">
-                    复杂内流道散热 高速冷却
-                  </p>
-                  <img
-                    class="img-fluid d-block mx-auto"
-                    src="assets/img/portfolio/3.jpg"
-                    alt="..."
-                  />
-                  <p>
-                    快速制造微米级模具，并在精密模具里打入多维随形冷却流道，提高冷却效率，延长设备使用寿命并提升设备产能
-                  </p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" id="occupation" type="text" placeholder="职务" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" id="phone" type="number" placeholder="电话号码" />
+                </div>
+              </div>
+            </div>
 
-                  <button
-                    class="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i class="fas fa-times me-1"></i>
-                    关闭
-                  </button>
+            <div class="row">
+              <div class="col-md-6 mb-md-0">
+                <div class="form-group">
+                  <select class="form-select" id="material" style="padding:1.25rem;" required>
+                    <option value="" disabled selected>选择材料</option>
+                    <option value="不锈钢">不锈钢</option>
+                    <option value="钛基合金">钛基合金</option>
+                    <option value="镍基合金">镍基合金</option>
+                    <option value="其他（备注）">其他（备注）</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-md-0">
+                  <input class="form-control" id="pieces" type="number" placeholder="工件数量" min="1" />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 4 modal popup-->
-    <div
-      class="portfolio-modal modal fade"
-      id="portfolioModal4"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal">
-            <img src="assets/img/close-icon.svg" alt="Close modal" />
-          </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">精密探测</h2>
-                  <p class="item-intro text-muted">
-                    多孔多流道一体成型 微型高精度探测
-                  </p>
-                  <img
-                    class="img-fluid d-block mx-auto"
-                    src="assets/img/portfolio/4.jpg"
-                    alt="..."
-                  />
-                  <p>
-                    可以直接一体成型多孔多流道、微型高精度探测装置，并具有高表面光洁度，无需后期处理，可直接使用
-                  </p>
-                  <button
-                    class="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i class="fas fa-times me-1"></i>
-                    关闭
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 5 modal popup-->
-    <div
-      class="portfolio-modal modal fade"
-      id="portfolioModal5"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal">
-            <img src="assets/img/close-icon.svg" alt="Close modal" />
-          </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">消费电子</h2>
-                  <p class="item-intro text-muted">
-                    复杂内流道 高性能水冷散热
-                  </p>
-                  <img
-                    class="img-fluid d-block mx-auto"
-                    src="assets/img/portfolio/5.jpg"
-                    alt="..."
-                  />
-                  <p>
-                    微米级打印技术可在小于1毫米的部件内打印封闭式的复杂微结构流道系统，实现传统工艺无法加工的复杂部件，大大提高产品散热性能;
-                  </p>
 
-                  <button
-                    class="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i class="fas fa-times me-1"></i>
-                    关闭
-                  </button>
-                </div>
-              </div>
+          <div class="col-md-5">
+            <div class="form-group form-group-textarea pb-4">
+              <textarea class="form-control" id="comments" placeholder="备注"></textarea>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- Portfolio item 6 modal popup-->
-    <div
-      class="portfolio-modal modal fade"
-      id="portfolioModal6"
-      tabindex="-1"
-      role="dialog"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal">
-            <img src="assets/img/close-icon.svg" alt="Close modal" />
-          </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">贵金属</h2>
-                  <p class="item-intro text-muted">
-                    金银饰品个性化定制
-                  </p>
-                  <img
-                    class="img-fluid d-block mx-auto"
-                    src="assets/img/portfolio/6.jpg"
-                    alt="..."
-                  />
-                  <p>
-                    微米级技术打印的18K黄金粉末，可直径成型精细复杂的结构，打印成品表面光洁，同时大量减少支撑件需求，降低后期加工工序，节约黄金粉末的原材料成本。
-                  </p>
 
-                  <button
-                    class="btn btn-primary btn-xl text-uppercase"
-                    data-bs-dismiss="modal"
-                    type="button"
-                  >
-                    <i class="fas fa-times me-1"></i>
-                    关闭
-                  </button>
-                </div>
+        <!-- Submit Button-->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-xl text-uppercase" onclick="makeMail()">
+            发送
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Footer-->
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-lg-start">
+          &copy; 云耀深维（江苏）科技有限公司 2021
+        </div>
+        <div class="col-lg-4 my-3 my-lg-0">
+          <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn" target="_blank"><i
+              class="far fa-envelope fa-2x"></i></a>
+          <a class="btn btn-dark btn-social mx-2" href="tel:+8651253668959" title="+8651253668959" target="_blank"><i
+              class="fas fa-phone-square-alt fa-2x"></i></a>
+          
+          <a class="btn btn-dark btn-social mx-2"
+            href="https://www.linkedin.com/in/%E4%BA%91%E8%80%80%E6%B7%B1%E7%BB%B4-aixway-4354a8210/" target="_blank"><i
+              class="fab fa-linkedin-in fa-2x"></i></a>
+          <a class="btn btn-dark btn-social mx-2" href="https://github.com/Aixway" target="_blank"><i
+              class="fab fa-github fa-2x"></i></a>
+          <a class="btn btn-dark btn-social mx-2" href="https://api.map.baidu.com/marker?location=31.423402,121.143285&title=云耀深维(江苏)科技有限公司&content=江苏省苏州市太仓市子冈路27号科技信息产业园一期6栋702室&output=html
+            " target="_blank"><i class="fas fa-map-marked-alt fa-2x"></i></a>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a class="col-lg-4 text-lg-start text-dark" href="https://beian.miit.gov.cn" target="_blank">
+            ICP备案号：苏ICP备2021042006号
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Portfolio Modals-->
+  <!-- Portfolio item 1 modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="assets/img/close-icon.svg" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Project details-->
+                <h2 class="text-uppercase">航空航天</h2>
+                <p class="item-intro text-muted">
+                  镍基高温合金 航发、火箭引擎部件一体成型
+                </p>
+                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                <!--p style="font-size: 0.9rem;font-style: italic;"><img class="img-fluid d-block mx-auto" style="display: block;" src="https://live.staticflickr.com/328/19809854481_9144176338_b.jpg" alt="jet engine sketch 2"><a href="https://www.flickr.com/photos/34547181@N00/19809854481">"jet engine sketch 2"</a><span> by <a href="https://www.flickr.com/photos/34547181@N00">Philippe Put</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=0777b9e1-7816-4620-b5ea-8d3f47a394a5" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a></p-->
+                <p>
+                  我司专家团队运用微米级打印技术成功一次成型具有高表面光洁度和复杂内部结构的镍
+                  基高温合金航空发动机部件，大幅度提高其性能及效果;
+                </p>
+
+                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                  <i class="fas fa-times me-1"></i>
+                  关闭
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  </div>
+  <!-- Portfolio item 2 modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="assets/img/close-icon.svg" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Project details-->
+                <h2 class="text-uppercase">医疗植入体</h2>
+                <p class="item-intro text-muted">
+                  心脏支架 骨科钢板 人工关节 定制化植入体 可溶解植入体
+                </p>
+                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                <p>
+                  微米级打印技术可直接成型微创手术器械/手术耗材/手术机器人关节及快速制造个性化植入体/介入体
+                </p>
+
+                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                  <i class="fas fa-times me-1"></i>
+                  关闭
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio item 3 modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="assets/img/close-icon.svg" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Project details-->
+                <h2 class="text-uppercase">精密模具</h2>
+                <p class="item-intro text-muted">
+                  复杂内流道散热 高速冷却
+                </p>
+                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                <p>
+                  快速制造微米级模具，并在精密模具里打入多维随形冷却流道，提高冷却效率，延长设备使用寿命并提升设备产能
+                </p>
+
+                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                  <i class="fas fa-times me-1"></i>
+                  关闭
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio item 4 modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="assets/img/close-icon.svg" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Project details-->
+                <h2 class="text-uppercase">精密探测</h2>
+                <p class="item-intro text-muted">
+                  多孔多流道一体成型 微型高精度探测
+                </p>
+                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
+                <p>
+                  可以直接一体成型多孔多流道、微型高精度探测装置，并具有高表面光洁度，无需后期处理，可直接使用
+                </p>
+                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                  <i class="fas fa-times me-1"></i>
+                  关闭
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio item 5 modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="assets/img/close-icon.svg" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Project details-->
+                <h2 class="text-uppercase">消费电子</h2>
+                <p class="item-intro text-muted">
+                  复杂内流道 高性能水冷散热
+                </p>
+                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
+                <p>
+                  微米级打印技术可在小于1毫米的部件内打印封闭式的复杂微结构流道系统，实现传统工艺无法加工的复杂部件，大大提高产品散热性能;
+                </p>
+
+                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                  <i class="fas fa-times me-1"></i>
+                  关闭
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio item 6 modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-bs-dismiss="modal">
+          <img src="assets/img/close-icon.svg" alt="Close modal" />
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="modal-body">
+                <!-- Project details-->
+                <h2 class="text-uppercase">贵金属</h2>
+                <p class="item-intro text-muted">
+                  金银饰品个性化定制
+                </p>
+                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                <p>
+                  微米级技术打印的18K黄金粉末，可直径成型精细复杂的结构，打印成品表面光洁，同时大量减少支撑件需求，降低后期加工工序，节约黄金粉末的原材料成本。
+                </p>
+
+                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                  <i class="fas fa-times me-1"></i>
+                  关闭
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <!-- * *                               SB Forms JS                               * *-->
+  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>-->
-  </body>
+  <div id="floatContacts">
+    <a class="btn btn-dark btn-social mx-2" href="mailto:info@aixway3d.cn" title="info@aixway3d.cn" target="_blank"><i
+        class="far fa-envelope fa-4x"></i></a>
+    <a class="btn btn-dark btn-social mx-2" href="tel:+8651253668959" title="+8651253668959" target="_blank"><i
+        class="fas fa-phone-square-alt fa-4x"></i></a>
+  </div>
+</body>
+
 </html>
