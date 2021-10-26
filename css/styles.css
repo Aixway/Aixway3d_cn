@@ -11788,10 +11788,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 #floatContacts{
   position:fixed;
   right: 10px;
-  top: 40%;
+  bottom: 0%;
   z-index: 20;
   width: 75px;
-  height: 180px;
+  height: 370px;
 }
 #floatContacts>.btn{
   width:75px;
@@ -11803,10 +11803,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 #contactDisplay{
   position:fixed;
   right: 10px;
-  top: 40%;
+  bottom: 0%;
   z-index: -10;
   width: 150px;
-  height: 180px;
+  height: 370px;
 }
 #contactDisplay>.btn{
   width:150px;
@@ -11815,4 +11815,17 @@ section#contact form#contactForm :-ms-input-placeholder {
   border-radius: 20px;
   margin-bottom: 10px;
   opacity:0
+}
+#qrcode{
+  position:fixed;
+  right: 0px;
+  bottom: 0px;
+  width:200px;
+  height:200px;
+  max-width:30vw;
+  max-height:30vw;
+  border-radius: 10px;
+}
+#qrcode>img{
+  width:90%;
 }
