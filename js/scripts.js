@@ -52,19 +52,22 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
-var contactTextSize = contactNow.clientWidth*0.3;
-contactText.style.fontSize=contactTextSize+"px"
+var contactTextSize = contactNow.clientWidth * 0.3;
+contactText.style.fontSize = contactTextSize + "px"
 
-function moveLeft(){
+function moveLeft() {
     floatContacts = document.getElementById("floatContacts")
     floatContacts.style.width = '235px'
     contactDisplay = document.getElementById('contactDisplay')
     contactDisplay.style.zIndex = '10'
-  
+    contactDisplay.children[0].style.opacity = '1'
+    contactDisplay.children[2].style.opacity = '1'
 }
-  function moveNormal(){
+function moveNormal() {
     floatContacts = document.getElementById("floatContacts")
-    floatContacts.style.width = '75px'
+    floatContacts.style.width = '75px';
     contactDisplay = document.getElementById('contactDisplay')
-    contactDisplay.style.zIndex = '-10'
-  }
+    contactDisplay.style.zIndex = '-10';
+    contactDisplay.children[0].style.opacity = '0'
+    contactDisplay.children[2].style.opacity = '0'
+}
